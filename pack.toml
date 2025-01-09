@@ -1,0 +1,10 @@
+[custom.all.extrafun]
+type = "local"
+path = "."
+ipkg = "extrafun.ipkg"
+test = "test/test.ipkg"
+
+[custom.all.extrafun-test]
+type = "local"
+path = "test"
+ipkg = "test.ipkg"

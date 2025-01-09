@@ -1,0 +1,46 @@
+package extrafun
+version = 0.1.0
+authors = "James Cranch <cranch@cantab.net>"
+sourceloc = "https://github.com/jcranch/extrafun"
+license = "BSD3"
+brief = "Various extra category theory classes"
+
+-- the Idris2 version required (e.g. langversion >= 0.5.1)
+-- langversion
+
+depends = contrib
+
+modules = Control.Applicative.Restricted,
+          Control.Monad.Restricted,
+
+	  Control.Category,
+	  Control.Kleisli,
+
+          Data.Functor.Indexed,
+	  Data.Functor.Dependent,
+	  Data.Functor.Restricted,
+
+	  Data.Foldable.Indexed,
+	  Data.Foldable.Dependent,
+
+	  Data.Traversable.Indexed,
+	  Data.Traversable.Dependent,
+
+          Data.Filterable,
+	  Data.Filterable.Indexed,
+	  Data.Filterable.Dependent,
+
+          Data.Witherable,
+	  Data.Witherable.Indexed,
+	  Data.Witherable.Dependent,
+
+	  Data.Withering,
+	  Data.Withering.Dependent,
+
+	  Data.Indexed.Add,
+	  Data.Indexed.AddDep,
+	  Data.Indexed.Fixed,
+	  Data.Indexed.FixedDep,
+	  Data.Indexed.Independent
+
+sourcedir = "src"
