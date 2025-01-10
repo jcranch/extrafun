@@ -10,4 +10,4 @@ interface RFunctor (0 r : Type -> Type) (0 f : Type -> Type) | f where
   rmap : (r x, r y) => (x -> y) -> f x -> f y
 
 RFunctor Ord SortedSet where
-  rmap f = fromList . map f . Data.SortedSet.toList
+  rmap f = fromList . map f . Prelude.toList
