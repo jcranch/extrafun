@@ -1,5 +1,7 @@
 module Data.Foldable.Dependent
 
+import Data.SortedMap.Dependent
+
 
 public export
 interface DepFoldable (0 i : Type) (0 t : (i -> Type) -> Type) | t where
@@ -27,3 +29,15 @@ export
   dfoldl f z (x ** y) = f z x y
   dfoldr f z (x ** y) = f x y z
   dconcatMap f (x ** y) = f x y
+
+export
+DepFoldable k (SortedDMap k) where
+  dfoldl f = let
+    g : m -> DPair k v -> m
+    g x (MkDPair k v) = f x k v
+    in foldl g
+  dfoldr f = let
+    g : DPair k v -> m -> m
+    g (MkDPair k v) x = f k v x
+    in foldr g
+  dconcatMap = foldMap

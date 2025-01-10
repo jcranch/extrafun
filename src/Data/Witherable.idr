@@ -1,3 +1,4 @@
+||| A Witherable is a combination of a Traversable and a Filterable
 module Data.Witherable
 
 import public Data.Filterable

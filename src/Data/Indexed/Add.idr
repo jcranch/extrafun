@@ -1,6 +1,6 @@
+||| We can make any collection into an indexed collection by storing
+||| pairs
 module Data.Indexed.Add
-
--- Make a collection into an indexed collection by storing pairs.
 
 import Data.Witherable.Indexed
 

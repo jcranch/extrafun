@@ -1,7 +1,6 @@
+||| We can make any collection into an dependently indexed collection
+||| by storing dependent pairs.
 module Data.Indexed.AddDep
-
--- Make a collection into an dependently indexed collection by storing
--- dependent pairs.
 
 import Data.Witherable
 import Data.Witherable.Dependent

@@ -1,4 +1,12 @@
+||| Functors with type depending on some extra data, the "index"
+|||
+||| They are expected to obey the laws
+|||   imap g . imap f = imap (\i => g i . f i)
+||| and
+|||   imap (\i => id {t i}) = id
 module Data.Functor.Dependent
+
+import Data.SortedMap.Dependent
 
 
 public export
@@ -9,3 +17,5 @@ export
 {0 i : Type} -> DepFunctor i (DPair i) where
   dmap f (x ** y) = (x ** f x y)
 
+DepFunctor k (SortedDMap k) where
+  dmap = map

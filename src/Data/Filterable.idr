@@ -1,3 +1,4 @@
+||| A Filterable is a functor where elements can be thrown away
 module Data.Filterable
 
 

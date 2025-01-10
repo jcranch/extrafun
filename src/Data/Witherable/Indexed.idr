@@ -1,3 +1,4 @@
+||| An indexed Witherable
 module Data.Witherable.Indexed
 
 import public Data.Filterable.Indexed

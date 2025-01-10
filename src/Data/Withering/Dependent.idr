@@ -1,3 +1,4 @@
+||| A dependently-typed Withering
 module Data.Withering.Dependent
 
 import Data.Indexed.FixedDep

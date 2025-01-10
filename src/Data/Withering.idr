@@ -1,3 +1,10 @@
+||| A withering is something which can be run on any IndWitherable.
+|||
+||| Since IndWitherable has a large family of superclasses, there are
+||| many such things.
+|||
+||| The interest in these things is that they are the sorts of things
+||| one wants to do in merging operations.
 module Data.Withering
 
 import Data.Indexed.Fixed

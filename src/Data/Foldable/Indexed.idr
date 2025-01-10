@@ -1,3 +1,4 @@
+||| A Foldable that is able to read extra data, the index
 module Data.Foldable.Indexed
 
 import Data.Vect
@@ -8,7 +9,6 @@ import Data.Vect
 -- faster depends on the data structure.
 
 
--- changed so as not to depend on IndFunctor as well
 public export
 interface (Foldable f) => IndFoldable i f | f where
 

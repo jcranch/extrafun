@@ -1,3 +1,4 @@
+||| A dependently-typed Witherable
 module Data.Witherable.Dependent
 
 import public Data.Filterable.Dependent

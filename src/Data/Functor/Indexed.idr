@@ -1,4 +1,9 @@
-||| Functors able to access some separate data, the "index"
+||| Functors able to read some separate data, the "index".
+|||
+||| They are expected to obey the laws
+|||   imap g . imap f = imap (\i => g i . f i)
+||| and
+|||   imap (const id) = id
 |||
 ||| The abbreviation "Ind" could be taken to stand for "Indexed", but
 ||| also for "Independent", to contrast it with the "Dependent"

@@ -1,6 +1,6 @@
+||| We can treat any dependent functor as an independent functor by
+||| using constant index
 module Data.Indexed.Independent
-
--- Code for treating a dependent functor as an independent functor.
 
 import Data.Witherable.Dependent
 import Data.Witherable.Indexed

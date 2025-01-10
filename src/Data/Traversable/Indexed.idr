@@ -1,9 +1,11 @@
+||| An IndTraversable is a Traversable able to read some extra data,
+||| the index.
 module Data.Traversable.Indexed
 
+import Control.Applicative.Const
 import Data.Vect
 
 import public Data.Foldable.Indexed
-
 
 public export
 interface (Traversable t, IndFoldable i t) => IndTraversable i t | t where
@@ -29,3 +31,11 @@ export
 IndTraversable (Fin k) (Vect k) where
   itraverse f [] = pure []
   itraverse f (x::xs) = (::) <$> f FZ x <*> itraverse (f . FS) xs
+
+||| Any traversable is automatically foldable; this is a ifoldMap
+||| operation
+indTraversableFoldMap : (IndTraversable i t, Monoid m) => (i -> a -> m) -> t a -> m
+indTraversableFoldMap f = let
+  g : i -> a -> Const m ()
+  g x = MkConst . f x
+  in runConst . itraverse g

@@ -1,6 +1,6 @@
+||| We can regarding any functor as indexed, with a specified fixed
+||| index.
 module Data.Indexed.Fixed
-
--- Regarding a functor as indexed, with specified fixed index.
 
 import Data.Witherable.Indexed
 

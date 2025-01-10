@@ -1,3 +1,5 @@
+||| A DepFilterable is a dependently-typed Functor where elements can
+||| be thrown away.
 module Data.Filterable.Dependent
 
 import public Data.Functor.Dependent

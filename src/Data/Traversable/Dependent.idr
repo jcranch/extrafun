@@ -1,6 +1,9 @@
+||| A dependently-typed traversable class
 module Data.Traversable.Dependent
 
+import Control.Applicative.Const
 import public Data.Foldable.Dependent
+import Data.SortedMap.Dependent
 
 
 public export
@@ -11,3 +14,14 @@ interface (DepFoldable i t) => DepTraversable (0 i : Type) (0 t : (i -> Type) ->
 export
 {0 i : Type} -> DepTraversable i (DPair i) where
   dtraverse k (x ** y) = (MkDPair x) <$> k x y
+
+export
+DepTraversable k (SortedDMap k) where
+  dtraverse = traverse
+
+||| Any traversable is automatically foldable
+depTraversableFoldMap : (DepTraversable i t, Monoid m) => ((x : i) -> v x -> m) -> t v -> m
+depTraversableFoldMap f = let
+  g : (x : i) -> v x -> Const m (v x)
+  g x = MkConst . f x
+  in runConst . dtraverse g

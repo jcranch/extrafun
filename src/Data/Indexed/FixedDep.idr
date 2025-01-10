@@ -1,6 +1,6 @@
+||| We can regard any functor as dependently indexed, with specified
+||| fixed index.
 module Data.Indexed.FixedDep
-
--- Regard a functor as dependently indexed, with specified fixed index.
 
 import Data.Witherable
 import Data.Witherable.Dependent
