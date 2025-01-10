@@ -1,6 +1,10 @@
+||| Functors able to access some separate data, the "index"
+|||
+||| The abbreviation "Ind" could be taken to stand for "Indexed", but
+||| also for "Independent", to contrast it with the "Dependent"
+||| versions elsewhere in the library.
 module Data.Functor.Indexed
 
--- "Ind" can be taken to stand for "Indexed" or "Independent"
 
 import Data.Vect
 

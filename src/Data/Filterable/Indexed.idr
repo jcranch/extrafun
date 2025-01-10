@@ -4,6 +4,8 @@ import public Data.Filterable
 import public Data.Functor.Indexed
 
 
+||| An IndFilterable is a Filterable with read-only access to extra
+||| indexing data.
 public export
 interface (Filterable t, IndFunctor i t) => IndFilterable i t | t where
   imapMaybe : (i -> a -> Maybe b) -> t a -> t b
