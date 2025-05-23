@@ -17,5 +17,9 @@ export
 {0 i : Type} -> DepFunctor i (DPair i) where
   dmap f (x ** y) = (x ** f x y)
 
+%inline
+impl : {0 u,v : i -> Type} -> ((x : i) -> u x -> v x) -> {x : i} -> u x -> v x
+impl f {x} = f x
+
 DepFunctor k (SortedDMap k) where
-  dmap = map
+  dmap f = Dependent.map $ impl f

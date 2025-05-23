@@ -15,9 +15,13 @@ export
 {0 i : Type} -> DepTraversable i (DPair i) where
   dtraverse k (x ** y) = (MkDPair x) <$> k x y
 
+%inline
+impl : {0 u,v : i -> Type} -> ((x : i) -> u x -> v x) -> {x : i} -> u x -> v x
+impl f {x} = f x
+
 export
 DepTraversable k (SortedDMap k) where
-  dtraverse = traverse
+  dtraverse f = traverse (impl f)
 
 ||| Any traversable is automatically foldable
 depTraversableFoldMap : (DepTraversable i t, Monoid m) => ((x : i) -> v x -> m) -> t v -> m
